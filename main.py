@@ -210,7 +210,7 @@ def main():
     
     while True:
         for idx, token in enumerate(tokens):
-            print(Fore.CYAN + f"\n🔍 Processing account {idx + 1}...")
+            print(Fore.CYAN + f"🔍 Processing account {idx + 1}...")
             
             # Buat header untuk akun ini jika belum ada
             if token not in account_headers:
@@ -253,13 +253,13 @@ def main():
                             task_title = task.get('title')
                             task_status = task.get('status')
                             
-                            print(Fore.CYAN + f"\n🔄 Processing task: {task_title} (ID: {task_id}, Status: {task_status})")
+                            print(Fore.CYAN + f"🔄 Processing task: {task_title} (ID: {task_id}, Status: {task_status})")
                             
                             if task_status in ['new', 'started']:
                                 task_response = complete_task(task_id, token, headers, proxy)
                                 
                                 if task_response:
-                                    print(Fore.BLUE + "\n📝 Task Response:")
+                                    print(Fore.BLUE + "📝 Task Response:")
                                     print(f"Task ID: {task_response.get('id')}")
                                     print(f"Title: {task_response.get('title')}")
                                     print(f"Status: {task_response.get('status')}")
@@ -286,7 +286,7 @@ def main():
                 print(Fore.RED + "❌ All proxies failed for this account. Moving to the next account.")
             
             # Pemisah antara akun
-            print(Fore.MAGENTA + "\n" + "━" * 50 + "\n")
+            print(Fore.MAGENTA + "━" * 50 + "\n")
         
         # Hitung mundur untuk loop berikutnya
         countdown_timer(loop_duration)
