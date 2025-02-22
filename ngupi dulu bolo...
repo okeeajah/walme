@@ -266,6 +266,10 @@ def main():
                                     print(f"Reward: {task_response.get('reward')} XP")
                                     print(f"Started At: {task_response.get('started_at')}")
                                     print(f"Completed At: {task_response.get('completed_at')}")
+                                
+                                # Delay 30 detik setelah setiap task selesai
+                                print(Fore.YELLOW + "⏳ Waiting for 30 seconds before processing the next task...")
+                                time.sleep(30)
                             else:
                                 print(Fore.YELLOW + "⏭️ Task already completed. Skipping...")
                         
